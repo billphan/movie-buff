@@ -14,35 +14,27 @@ CREATE TABLE directors (
   country VARCHAR (120)
 );
 
--- 1
 SELECT title FROM movies;
 
--- 2
 SELECT title FROM movies ORDER BY year;
 
--- 3
 INSERT INTO directors (first, last, country)
     VALUES
     ("Jean-Pierre", "Jeunet", "France");
 
--- 4
 SELECT director_id FROM directors;
 
--- 5
 INSERT INTO movies (title, year, director)
     VALUES
     ("Amelie", 2001, "Jean-Pierre Jeunet");
 
--- 6
 SELECT * FROM directors ORDER BY country;
 
--- 7
 SELECT movies.title, directors.country
 FROM movies
 INNER JOIN directors
 ON movies.director = directors.country;
 
--- 8
 SELECT movies.title, directors.first, directors.last
 FROM movies
 INNER JOIN directors
